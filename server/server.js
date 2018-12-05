@@ -1,7 +1,6 @@
 import express from 'express';
 
 const app = express();
-const PORT = 3002;
 
 app.get('/test', (req, res) => {
     return res.status(200)
@@ -13,7 +12,8 @@ app.post('/test', (req, res) => {
         .send("Test is working");
 });
 
-app.listen(PORT, () => console.log(`Running on ${PORT}`));
+
+app.listen(3002, () => console.log('live on 3002'));
 
 export default app;
 
