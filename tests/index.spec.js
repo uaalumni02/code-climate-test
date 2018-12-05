@@ -20,3 +20,17 @@ describe('App', () => {
         });
     });
 });
+
+describe('App', () => {
+    describe('/test', () => {
+        it("should return 'Test is working'", (done) => {
+            chai.request(app)
+                .post('/test')
+                .end((error, response) => {
+                    response.should.have.status(200);
+                    expect(response.text).to.equal("Test is working");
+                    done();
+                });
+        });
+    });
+});
